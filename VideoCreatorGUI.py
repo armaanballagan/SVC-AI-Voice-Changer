@@ -20,6 +20,7 @@ from PIL import Image, ImageTk
 from tkinter import filedialog
 import subprocess
 import json
+import os
 from tkinter import Tk, Button, filedialog, Label
 from PIL import Image, ImageTk
 
@@ -101,7 +102,7 @@ def loadImage(root):
     image_path (String): The image path refers to the path of the selected image. It is used to display the correct image on the button in the GUI.
     '''
     
-    image_path = filedialog.askopenfilename(initialdir=r"C:\Users\balla\OneDrive\Documents\GitHub\SVC-AI\CSFinalProject\Images", title="Select A File", filetypes=(("all files", "*.*"), ("jpg files", "*.jpg"), ("png files", "*.png")))
+    image_path = filedialog.askopenfilename(initialdir=os.path.abspath("Images"), title="Select A File", filetypes=(("all files", "*.*"), ("jpg files", "*.jpg"), ("png files", "*.png")))
     root.destroy()
     createNewFrame(image_path)
 
@@ -146,6 +147,6 @@ def scaleImage(image_path, desired_width):
     return new_image
 
 
-initial_image_path = r'C:\Users\balla\OneDrive\Documents\GitHub\SVC-AI\CSFinalProject\Images\Default_Image.jpg'
+initial_image_path = r'Images\Default_Image.jpg'
 createNewFrame(initial_image_path)
 
