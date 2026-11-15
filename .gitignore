@@ -1,0 +1,23 @@
+# Whitelist: ignore everything, then allow only the project's own files.
+/*
+!/.gitignore
+!/.gitmodules
+!/README.md
+!/*.py
+!/vocalExtractor.bat
+!/values.json
+!/environments/
+!/Images/
+!/Models/
+!/min_dalle_module
+
+# Voice model weights are published as GitHub Release assets, not in git
+/Models/*
+!/Models/README.md
+
+# Never commit credentials
+client_secret.json
+token files/
+
+__pycache__/
+*.pyc
